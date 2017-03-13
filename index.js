@@ -20,6 +20,8 @@ const FORMATS = {
   'time': 'HH:mm'
 };
 
+const SUPPORTED_ORIENTATIONS = ["portrait", "portrait-upside-down", "landscape", "landscape-left", "landscape-right"];
+
 class DatePicker extends Component {
   constructor(props) {
     super(props);
@@ -52,10 +54,9 @@ class DatePicker extends Component {
   setModalVisible(visible) {
     const {height, duration} = this.props;
 
-    this.setState({modalVisible: visible});
-
     // slide animation
     if (visible) {
+      this.setState({modalVisible: visible});
       Animated.timing(
         this.state.animatedHeight,
         {
@@ -64,8 +65,14 @@ class DatePicker extends Component {
         }
       ).start();
     } else {
-      this.setState({
-        animatedHeight: new Animated.Value(0)
+      Animated.timing(
+        this.state.animatedHeight,
+        {
+          toValue: 0,
+          duration: duration
+        }
+      ).start(() => {
+        this.setState({modalVisible: visible});
       });
     }
   }
@@ -293,7 +300,9 @@ class DatePicker extends Component {
           />}
           {Platform.OS === 'ios' && <Modal
             transparent={true}
+            animationType="none"
             visible={this.state.modalVisible}
+            supportedOrientations={SUPPORTED_ORIENTATIONS}
             onRequestClose={() => {this.setModalVisible(false);}}
           >
             <View
