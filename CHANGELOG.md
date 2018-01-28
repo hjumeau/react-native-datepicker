@@ -1,3 +1,69 @@
+<a name="1.6.0"></a>
+# [1.6.0](https://github.com/xgfe/react-native-datepicker/compare/v1.5.1...v1.6.0) (2017-06-12)
+
+### Features
+
+* **datepicker:** adding testIds to elements ([#138](https://github.com/xgfe/react-native-datepicker/issues/138)
+* **datepicker:** add `hideText` property to hide the Date Text ([#127](https://github.com/xgfe/react-native-datepicker/issues/127)
+* **datepicker:** add `TouchableComponent` property to support custom touchable components ([#128](https://github.com/xgfe/react-native-datepicker/issues/128)
+
+
+<a name="1.5.1"></a>
+## [1.5.1](https://github.com/xgfe/react-native-datepicker/compare/v1.5.0...v1.5.1) (2017-05-16)
+
+
+### Features
+
+* **datepicker:** change datepicker switch gap timeout to 200ms ([5b6e78f](https://github.com/xgfe/react-native-datepicker/commit/5b6e78f))
+
+### Bug Fixes
+
+* **datepicker:** Fix onDateChange for ios ([#123](https://github.com/xgfe/react-native-datepicker/issues/123), [e4e2193](https://github.com/xgfe/react-native-datepicker/commit/e4e2193))
+
+
+<a name="1.5.0"></a>
+# [1.5.0](https://github.com/xgfe/react-native-datepicker/compare/v1.4.7...v1.5.0) (2017-05-15)
+
+
+### Features
+
+* **datepicker:** Add onPressMask prop for ios ([#120](https://github.com/xgfe/react-native-datepicker/issues/120), [09ecdf8](https://github.com/xgfe/react-native-datepicker/commit/09ecdf8))
+* **datepicker:** Ability to pass icon component with `iconComponent` property ([#124](https://github.com/xgfe/react-native-datepicker/issues/124), [35150ed](https://github.com/xgfe/react-native-datepicker/commit/35150ed))
+
+### Bug Fixes
+
+* **datepicker:** Fix onCloseModal for android ([#122](https://github.com/xgfe/react-native-datepicker/issues/122), [ba55c06](https://github.com/xgfe/react-native-datepicker/commit/ba55c06))
+
+
+<a name="1.4.7"></a>
+## [1.4.7](https://github.com/xgfe/react-native-datepicker/compare/v1.4.6...v1.4.7) (2017-04-13)
+
+
+### Bug Fixes
+
+* **datepicker:** fix `androidMode` prop pass bug ([#111](https://github.com/xgfe/react-native-datepicker/issues/111), [095f756](https://github.com/xgfe/react-native-datepicker/commit/095f756))
+
+
+<a name="1.4.6"></a>
+## [1.4.6](https://github.com/xgfe/react-native-datepicker/compare/v1.4.5...v1.4.6) (2017-04-05)
+
+
+### Features
+
+* **datepicker:** add `androidMode` property for DatePickerAndroid & TimePickerAndroid ([be30731](https://github.com/xgfe/react-native-datepicker/commit/be30731))
+
+
+
+<a name="1.4.5"></a>
+## [1.4.5](https://github.com/xgfe/react-native-datepicker/compare/v1.4.4...v1.4.5) (2017-03-21)
+
+
+### Bug Fixes
+
+* **datepicker:** fix `date` prop change not invoke state change bug ([#93](https://github.com/xgfe/react-native-datepicker/issues/93), [3c8099b](https://github.com/xgfe/react-native-datepicker/commit/3c8099b))
+
+
+
 <a name="1.4.4"></a>
 ## [1.4.4](https://github.com/xgfe/react-native-datepicker/compare/v1.4.3...v1.4.4) (2017-02-06)
 
