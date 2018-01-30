@@ -155,6 +155,16 @@ class DatePicker extends Component {
     return Moment(date, format).toDate();
   }
 
+  getDateCalendar(date = this.props.date) {
+    const { customCalendar } = this.props;
+    const momentDate = date instanceof Date ? Moment(date) : Moment(this.getDate(date));
+
+    if (customCalendar && customCalendar.constructor === Object && Object.keys(customCalendar).length) {
+      return momentDate.calendar(null, customCalendar);
+    }
+    return momentDate.calendar();
+  }
+
   getDateStr(date = this.props.date) {
     const {mode, format = FORMATS[mode]} = this.props;
 
@@ -172,10 +182,12 @@ class DatePicker extends Component {
   }
 
   getTitleElement() {
-    const {date, placeholder, customStyles} = this.props;
+    const { date, placeholder, customStyles, calendarDate } = this.props;
 
     if (!date && placeholder) {
       return (<Text style={[Style.placeholderText, customStyles.placeholderText]}>{placeholder}</Text>);
+    } else if (calendarDate) {
+      return (<Text style={[Style.dateText, customStyles.dateText]}>{this.getDateCalendar()}</Text>);
     }
     return (<Text style={[Style.dateText, customStyles.dateText]}>{this.getDateStr()}</Text>);
   }
@@ -471,7 +483,9 @@ DatePicker.propTypes = {
   onPressMask: PropTypes.func,
   placeholder: PropTypes.string,
   modalOnResponderTerminationRequest: PropTypes.func,
-  is24Hour: PropTypes.bool
+  is24Hour: PropTypes.bool,
+  calendarDate: PropTypes.bool,
+  customCalendar: PropTypes.object
 };
 
 export default DatePicker;
