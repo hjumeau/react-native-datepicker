@@ -334,6 +334,7 @@ class DatePicker extends Component {
   render() {
     const {
       mode,
+      locale,
       style,
       customStyles,
       disabled,
@@ -398,6 +399,7 @@ class DatePicker extends Component {
                     <View pointerEvents={this.state.allowPointerEvents ? 'auto' : 'none'}>
                       <DatePickerIOS
                         date={this.state.date}
+                        locale={locale}
                         mode={mode}
                         minimumDate={minDate && this.getDate(minDate)}
                         maximumDate={maxDate && this.getDate(maxDate)}
@@ -442,6 +444,7 @@ DatePicker.defaultProps = {
   mode: 'date',
   androidMode: 'default',
   date: '',
+  locale: 'en',
   // component height: 216(DatePickerIOS) + 1(borderTop) + 42(marginTop), IOS only
   height: 259,
 
@@ -463,6 +466,7 @@ DatePicker.defaultProps = {
 
 DatePicker.propTypes = {
   mode: PropTypes.oneOf(['date', 'datetime', 'time']),
+  locale: PropTypes.string,
   androidMode: PropTypes.oneOf(['calendar', 'spinner', 'default']),
   date: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date), PropTypes.object]),
   format: PropTypes.string,
